@@ -18,15 +18,14 @@ class Vehicle:
         return f'Цвет: {self._color}'
 
     def print_info(self):
-        print(f'{Vehicle.get_model(self)}\n'
-              f'{Vehicle.get_horsepower(self)}\n'
-              f'{Vehicle.get_color(self)}\n'
+        print(f'{self.get_model()}\n'
+              f'{self.get_horsepower()}\n'
+              f'{self.get_color()}\n'
               f'Владелец: {self.owner}')
 
     def set_color(self, new_color):
         self.new_color = new_color
         if new_color.lower() in self.__COLOR_VARIANTS:
-            # setattr(Vehicle, self._color, new_color)
             self._color = new_color
         else:
             print(f'Нельзя сменить цвет на {new_color}')
